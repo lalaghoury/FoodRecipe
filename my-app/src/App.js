@@ -5,8 +5,7 @@ import Homepage from "./Pages/Homepage/Homepage";
 import { RecipeProvider } from "./context/RecipeContext";
 import AllRecipesPage from "./Pages/AllRecipesPage/AllRecipesPage";
 import Footer from "./components/Footer/Footer";
-import CategoryPage from "./Pages/CategoryPage/CategoryPage";
-
+import CategoriesPage from "./Pages/CategoriesPage/CategoriesPage";
 
 function App() {
   return (
@@ -16,10 +15,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/recipe" element={<AllRecipesPage/>} />
-            <Route path="/category" element={<CategoryPage/>} />
+            <Route path="/recipe" element={<AllRecipesPage />} />
+            <Route path="/category" element={<CategoriesPage />} />
           </Routes>
-          
           <Footer />
         </BrowserRouter>
       </RecipeProvider>

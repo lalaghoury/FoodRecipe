@@ -1,6 +1,6 @@
 import React from "react";
 import "./Categories.scss";
-import CategoryCard from "../CategoryCard/CategoryCard";
+import Card1 from "../Card1/Card1";
 
 function Categories() {
   return (
@@ -9,7 +9,7 @@ function Categories() {
         <h1 className="text-black font-48">Categories</h1>
         <span className="text-primary">View more</span>
       </div>
-      <CategoryCard />
+      <Card1 />
     </div>
   );
 }

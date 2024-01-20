@@ -1,8 +1,8 @@
 import React from "react";
-import "./CategoryCard.scss";
+import "./Card1.scss";
 import { useRecipe } from "../../context/RecipeContext";
 
-function CategoryCard() {
+function Card1() {
   const { data } = useRecipe();
 
   return (
@@ -23,4 +23,4 @@ function CategoryCard() {
   );
 }
 
-export default CategoryCard;
+export default Card1;

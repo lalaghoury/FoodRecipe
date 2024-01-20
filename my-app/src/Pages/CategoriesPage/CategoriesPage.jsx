@@ -1,5 +1,6 @@
 import React from "react";
-import "./CategoryPage.scss";
+import "./CategoriesPage.scss";
+import Card1 from "../../components/Card1/Card1";
 
 function CategoryPage() {
   return (
@@ -8,6 +9,8 @@ function CategoryPage() {
         <span className="s-r-1">Home &gt; </span>
         <span className="s-r-2">Category</span>
       </div>
+      <Card1 />
+      <Card1 />
     </div>
   );
 }

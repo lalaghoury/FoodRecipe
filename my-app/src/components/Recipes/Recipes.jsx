@@ -2,6 +2,7 @@ import React from "react";
 import "./Recipes.scss";
 import Card from "../Card/Card";
 
+
 function Recipes() {
   return (
     <div className="recipes">
@@ -28,10 +29,10 @@ function Recipes() {
       <Card />
 
       <div className="r-l-m">
-
-      <button className="btn bg-primary">Load More</button>
+        <button  className="btn bg-primary">
+          Load More
+        </button>
       </div>
-      
     </div>
   );
 }
