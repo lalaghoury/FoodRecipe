@@ -8,7 +8,6 @@ import ExploreRecipes from "../../components/ExploreRecipes/ExploreRecipes";
 import StayInTouch from "../../components/StayInTouch/StayInTouch";
 import Categories from "../../components/Categories/Categories";
 import Logos from "../../components/Logos/Logos";
-import Footer from "../../components/Footer/Footer";
 
 function Homepage() {
   return (
@@ -21,7 +20,6 @@ function Homepage() {
       <StayInTouch />
       <Categories />
       <Logos />
-      <Footer />
     </div>
   );
 }

@@ -49,3 +49,18 @@
     }
   }
 }
+@media screen and (max-width: 750px) {
+  .header-container {
+    width: 100%;
+    padding: 0 32px;
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .nav-hamburger {
+        display: block;
+      }
+    }
+  }
+}

@@ -13,3 +13,10 @@
     padding: 0 32px;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .logos-container {
+    display: none;
+  }
+  
+}
