@@ -1,5 +1,19 @@
+html,
+.scroll-container {
+  overflow: scroll;
+}
+
+html,
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
 .text-black {
   color: var(--Black, #000);
+}
+
+.text-white {
+  color: var(--White, #fff);
 }
 
 .text-primary {
