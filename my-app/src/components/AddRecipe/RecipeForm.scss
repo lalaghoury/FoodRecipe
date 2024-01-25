@@ -15,9 +15,8 @@
     width: 200px;
   }
 }
-.antd-form-input{
+.antd-form-input {
   margin-top: 6px;
-  // padding: 16px;
 }
 .avatar-uploader {
   cursor: pointer;
@@ -32,8 +31,25 @@
   line-height: 26px;
 }
 
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-form-item .ant-form-item-label >label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before{
-  content: '';
+:where(.css-dev-only-do-not-override-1qhpsh8).ant-form-item
+  .ant-form-item-label
+  > label.ant-form-item-required:not(
+    .ant-form-item-required-mark-optional
+  )::before {
+  content: "";
 }
 
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-input{padding: 16px;}
+:where(.css-dev-only-do-not-override-1qhpsh8).ant-input {
+  padding: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .recipe-form {
+    
+    .cooking-time-input,
+    .prep-time-input {
+      width: 100%;
+    }
+  }
+  
+}

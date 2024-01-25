@@ -1,10 +1,7 @@
 import { Form } from "antd";
 import { createContext, useContext, useState } from "react";
 import { nanoid } from "nanoid";
-import {
-  LoadingOutlined,
-  PlusOutlined,
-} from "@ant-design/icons";
+import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 
 const AddRecipeContext = createContext();
 
@@ -17,6 +14,7 @@ export const AddRecipeProvider = ({ children }) => {
     try {
       const item = localStorage.getItem(key);
       if (!item) {
+        return [];
         throw new Error("Item not found in local storage");
       }
       return JSON.parse(item);
@@ -34,12 +32,13 @@ export const AddRecipeProvider = ({ children }) => {
   }
 
   function getAllRecepies() {
-    return loadFromLocalStorage("recepies") || "[]";
+    return loadFromLocalStorage("recepies");
   }
 
   function addRecepie(recepie) {
     let recepies = getAllRecepies();
-    recepies.push(recepie);
+    // recepies.push(recepie);
+    recepies = [...recepies, recepie];
     saveToLocalStorage("recepies", recepies);
   }
 
@@ -52,10 +51,11 @@ export const AddRecipeProvider = ({ children }) => {
 
   const onFinish = (e) => {
     const allRecipies = getAllRecepies();
-    const updatedRecipe = { ...e, id: nanoid(), image: imageUrl }; // Create a single recipe object
-    const updatedRecipes = [...allRecipies, updatedRecipe];
+    const newRecipe = { ...e, id: nanoid(), image: imageUrl }; // Create a single recipe object
+    const updatedRecipes = [...allRecipies, newRecipe];
     console.log(e);
-    addRecepie(updatedRecipe); // Pass the single recipe object to addRecepie
+    console.log(updatedRecipes);
+    addRecepie(newRecipe); // Pass the single recipe object to addRecepie
     console.log(updatedRecipes);
     saveToLocalStorage("recepies", updatedRecipes);
   };

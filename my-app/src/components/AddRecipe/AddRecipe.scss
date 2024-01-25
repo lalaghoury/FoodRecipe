@@ -22,3 +22,14 @@
     margin: auto;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .add-recipe {
+    padding: 0 32px;
+  }
+
+  .add-form {
+    // padding: 0 32px;
+  }
+  
+}
