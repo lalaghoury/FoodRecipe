@@ -15,7 +15,7 @@ export const AddRecipeProvider = ({ children }) => {
       const item = localStorage.getItem(key);
       if (!item) {
         return [];
-        throw new Error("Item not found in local storage");
+        // throw new Error("Item not found in local storage");
       }
       return JSON.parse(item);
     } catch (error) {
@@ -49,6 +49,20 @@ export const AddRecipeProvider = ({ children }) => {
     return e && e.fileList;
   };
 
+  // const handleImageChang = (e) => {
+  //   let reader = new FileReader();
+  //   let file = e.target.files[0];
+
+  //   reader.onloadend = () => {
+  //     this.setState({
+  //       file: file,
+  //       setImageUrl: reader.result,
+  //     });
+  //   };
+
+  //   reader.readAsDataURL(file);
+  // };
+
   const onFinish = (e) => {
     const allRecipies = getAllRecepies();
     const newRecipe = { ...e, id: nanoid(), image: imageUrl }; // Create a single recipe object
@@ -75,22 +89,25 @@ export const AddRecipeProvider = ({ children }) => {
     return isImage;
   };
 
-  const handleChange = (e) => {
+  const handleImageChange = (e) => {
     if (e.file.status === "uploading") {
       setLoading(true);
       return;
     }
     if (e.file.status === "done") {
-      getBase64(e.file.originFileObj, (url) => {
-        setLoading(false);
-        setImageUrl(url);
-        console.log("aasil");
-      });
+      let reader = new FileReader();
+      let file = e.target.files[0];
+
+      reader.onloadend = () => {
+        this.setState({
+          file: file,
+          setImageUrl: reader.result,
+        });
+      };
     }
   };
-
   const uploadButton = (
-    <div>
+    <div style={{ textAlign: "center" }}>
       {loading ? <LoadingOutlined /> : null}
       <div>
         <PlusOutlined /> Upload
@@ -109,7 +126,7 @@ export const AddRecipeProvider = ({ children }) => {
         onFinish,
         getBase64,
         beforeUpload,
-        handleChange,
+        handleImageChange,
         uploadButton,
         form,
         imageUrl,

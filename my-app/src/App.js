@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 import CategoriesPage from "./Pages/CategoriesPage/CategoriesPage";
 import AddRecipePage from "./Pages/AddRecipePage/AddRecipePage";
 import { AddRecipeProvider } from "./context/AddRecipeContext";
-import RecipeForm from "./components/AddRecipe/RecipeForm";
+import RecipeListing from "./components/AddRecipe/RecipeListing";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
               <Route path="/recipe" element={<AllRecipesPage />} />
               <Route path="/category" element={<CategoriesPage />} />
               <Route path="/add-recipe" element={<AddRecipePage />} />
-              <Route path="/test" element={<RecipeForm />} />
+              <Route path="/test" element={<RecipeListing />} />
             </Routes>
             <Footer />
           </BrowserRouter>

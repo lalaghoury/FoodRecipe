@@ -9,6 +9,7 @@
     border-radius: 8px;
     width: 120px;
     margin: auto;
+    cursor: pointer;
   }
   .cooking-time-input,
   .prep-time-input {
@@ -18,9 +19,25 @@
 .antd-form-input {
   margin-top: 6px;
 }
-.avatar-uploader {
-  cursor: pointer;
+
+.less {
+  width: 130px;
 }
+.facts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  :where(.css-dev-only-do-not-override-1qhpsh8).ant-form-item
+    .ant-form-item-label
+    > label {
+      color: var(--Gray--3, #A5A5A5);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+  }
+}
+
 
 :where(.css-dev-only-do-not-override-1qhpsh8).ant-form-item
   .ant-form-item-label
@@ -43,13 +60,22 @@
   padding: 16px;
 }
 
+@media screen and (max-width: 1200px) {
+  .recipe-form {
+    // margin: 0;
+    // width: 1000px;
+    .cooking-time-input,
+    .prep-time-input {
+      width: 150px;
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .recipe-form {
-    
     .cooking-time-input,
     .prep-time-input {
       width: 100%;
     }
   }
-  
 }

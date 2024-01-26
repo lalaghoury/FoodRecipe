@@ -13,17 +13,19 @@ function RecipeForm() {
     normFile,
     onFinish,
     beforeUpload,
-    handleChange,
+    handleImageChange,
     uploadButton,
     form,
     imageUrl,
   } = useAddRecipe();
 
+  const [gonext, setGonext] = React.useState(false);
+
   return (
     <div>
       <Form
         style={{
-          maxWidth: 600,
+          maxWidth: 700,
         }}
         className="recipe-form"
         form={form}
@@ -71,7 +73,7 @@ function RecipeForm() {
             showUploadList={false}
             action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
             beforeUpload={beforeUpload}
-            onChange={handleChange}
+            onChange={handleImageChange}
           >
             {imageUrl ? (
               <img
@@ -252,9 +254,69 @@ function RecipeForm() {
         </Form.Item>
 
         {/*Input For Recipe Nutrition Facts*/}
-        <Form.Item label="Nutrition Facts:" name="facts">
-          <Input placeholder="Nutrition Facts" className="antd-form-input" />
-        </Form.Item>
+        <div className="facts">
+          <Form.Item
+            label="Calories:"
+            name="calories"
+            rules={[{ required: true, message: "Please enter the calories!" }]}
+            className="calories"
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Protiens:"
+            name="protiens"
+            rules={[{ required: true, message: "Please enter the Protiens!" }]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Fats:"
+            name="fats"
+            rules={[{ required: true, message: "Please enter the Fats!" }]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Carbohydrates:"
+            name="carbohydrates"
+            rules={[
+              { required: true, message: "Please enter the Carbohydrates!" },
+            ]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Fats:"
+            name="fats"
+            rules={[{ required: true, message: "Please enter the Fats!" }]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Protiens:"
+            name="protiens"
+            rules={[{ required: true, message: "Please enter the Protiens!" }]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Calories:"
+            name="calories"
+            rules={[{ required: true, message: "Please enter the Calories!" }]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+          <Form.Item
+            label="Carbohydrates:"
+            name="carbohydrates"
+            rules={[
+              { required: true, message: "Please enter the Carbohydrates!" },
+            ]}
+          >
+            <Input placeholder="#" className="antd-form-input less" />
+          </Form.Item>
+        </div>
 
         {/*Input For Recipe Collection*/}
         <Form.Item
@@ -277,7 +339,11 @@ function RecipeForm() {
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit">
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="bg-primary text-white form-btn"
+          >
             Submit
           </Button>
         </Form.Item>
