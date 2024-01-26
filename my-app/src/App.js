@@ -9,6 +9,7 @@ import CategoriesPage from "./Pages/CategoriesPage/CategoriesPage";
 import AddRecipePage from "./Pages/AddRecipePage/AddRecipePage";
 import { AddRecipeProvider } from "./context/AddRecipeContext";
 import RecipeListing from "./components/AddRecipe/RecipeListing";
+import Exp from "./Exp";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/category" element={<CategoriesPage />} />
               <Route path="/add-recipe" element={<AddRecipePage />} />
               <Route path="/test" element={<RecipeListing />} />
+              <Route path="/exp" element={<Exp />} />
             </Routes>
             <Footer />
           </BrowserRouter>
