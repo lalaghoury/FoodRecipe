@@ -9,12 +9,10 @@ import CategoriesPage from "./Pages/CategoriesPage/CategoriesPage";
 import AddRecipePage from "./Pages/AddRecipePage/AddRecipePage";
 import { AddRecipeProvider } from "./context/AddRecipeContext";
 import RecipeListing from "./components/AddRecipe/RecipeListing";
-import { SupabaseProvider } from "./context/SupabaseContext";
 
 function App() {
   return (
     <div className="App-container">
-      <SupabaseProvider>
         <AddRecipeProvider>
           <RecipeProvider>
             <BrowserRouter>
@@ -30,7 +28,6 @@ function App() {
             </BrowserRouter>
           </RecipeProvider>
         </AddRecipeProvider>
-      </SupabaseProvider>
     </div>
   );
 }
