@@ -2,16 +2,16 @@ import React from "react";
 import "./AddRecipe.scss";
 import RecipeForm from "./RecipeForm";
 import { useAddRecipe } from "../../context/AddRecipeContext";
+import { Link } from "react-router-dom";
 
 function AddRecipe() {
-  const { addRecepie } = useAddRecipe();
   return (
     <div className="add-recipe">
       <div className="add-heading">
         <h1>Create new recipe</h1>
-        <button onClick={addRecepie} className="btn bg-primary text-white">
+        <Link to="/test" className="btn bg-primary text-white">
           Next
-        </button>
+        </Link>
       </div>
       <div className="add-form">
         <RecipeForm />

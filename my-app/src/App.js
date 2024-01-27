@@ -9,27 +9,28 @@ import CategoriesPage from "./Pages/CategoriesPage/CategoriesPage";
 import AddRecipePage from "./Pages/AddRecipePage/AddRecipePage";
 import { AddRecipeProvider } from "./context/AddRecipeContext";
 import RecipeListing from "./components/AddRecipe/RecipeListing";
-import Exp from "./Exp";
+import { SupabaseProvider } from "./context/SupabaseContext";
 
 function App() {
   return (
     <div className="App-container">
-      <AddRecipeProvider>
-        <RecipeProvider>
-          <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/recipe" element={<AllRecipesPage />} />
-              <Route path="/category" element={<CategoriesPage />} />
-              <Route path="/add-recipe" element={<AddRecipePage />} />
-              <Route path="/test" element={<RecipeListing />} />
-              <Route path="/exp" element={<Exp />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
-        </RecipeProvider>
-      </AddRecipeProvider>
+      <SupabaseProvider>
+        <AddRecipeProvider>
+          <RecipeProvider>
+            <BrowserRouter>
+              <Header />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/recipe" element={<AllRecipesPage />} />
+                <Route path="/category" element={<CategoriesPage />} />
+                <Route path="/add-recipe" element={<AddRecipePage />} />
+                <Route path="/test" element={<RecipeListing />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </RecipeProvider>
+        </AddRecipeProvider>
+      </SupabaseProvider>
     </div>
   );
 }

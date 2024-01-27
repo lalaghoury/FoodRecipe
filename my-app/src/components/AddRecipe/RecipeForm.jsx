@@ -71,7 +71,7 @@ function RecipeForm() {
             listType="picture"
             className="avatar-uploader"
             showUploadList={true}
-            action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+            action="https://run.mocky.io/v3/0d7aa6e3-fc01-4a47-893d-7e1cc3013d4e"
             beforeUpload={beforeUpload}
             onChange={handleImageChange}
           >

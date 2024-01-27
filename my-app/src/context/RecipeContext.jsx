@@ -1,5 +1,3 @@
-
-
 import React, { createContext, useContext, useState } from "react";
 
 const RecipeContext = createContext();
@@ -30,8 +28,7 @@ export const RecipeProvider = ({ children }) => {
       blogimage:
         "https://i.ibb.co/68b21J7/s-homepage-wepik-export-20230925201745-jeb-61.png",
       blogheading: "Unlocking the Benefits of Intermittent Fasting for ",
-      blogslogan:
-        " Unveiling the Hidden Dangers ....",
+      blogslogan: " Unveiling the Hidden Dangers ....",
       categoryimage: "https://i.ibb.co/ThVCNby/s-homepage-ellipse-27.png",
       categoryname: "Lunch recipes",
     },
