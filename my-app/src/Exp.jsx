@@ -1,14 +1,6 @@
 import React from "react";
-// import { createClient } from '@supabase/supabase-js';
 import supabase from './supabaseClient';
 
-
-// import { supabase } from "./supabaseClient.js";
-
-// const supabase = createClient({
-//   url: 'https://cyvtgpuztblppqsydqjp.supabase.co',
-//   key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5dnRncHV6dGJscHBxc3lkcWpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDYyNjk0NjMsImV4cCI6MjAyMTg0NTQ2M30.hh3cFM_LrK9tNXv_2piPFk20MhcvQT--wgkYpnCbba8',
-// });
 
 
 const { data, error } = await supabase.storage.createBucket(
